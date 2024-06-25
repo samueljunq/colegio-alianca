@@ -1,6 +1,6 @@
 # Colégio Aliança - Website
 
-![Logo]([images/LOGO_ALIANCA.png)
+![Logo](image/LOGO_ALIANCA.png)
 
 ## Sobre o Projeto
 
