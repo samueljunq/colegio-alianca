@@ -1,6 +1,6 @@
 # Colégio Aliança - Website
 
-![Logo]([images/LOGO_ALIANCA](https://github.com/samueljunq/colegio-alianca/blob/main/image/LOGO_ALIANCA.png))
+![Logo]([images/LOGO_ALIANCA.png))
 
 ## Sobre o Projeto
 
