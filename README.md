@@ -60,8 +60,8 @@ Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICEN
 
 Gostaríamos de agradecer ao Colégio Aliança pela oportunidade de desenvolver este projeto.
 
-![Footer Image](images/footer-image.png)
+![Footer Image](image/LOGO_ALIANCA.png)
 
 ---
 
-Feito com ❤️ por [Seu Nome](https://github.com/samueljunq)
+Feito com ❤️ por [Samuel Junqueira](https://github.com/samueljunq)
