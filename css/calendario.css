@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/bebas-neue');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+:root {
+    --dark-text: #f8fbff;
+    --light-body: #f3f8fe;
+    --light-main: #fdfdfd;
+    --light-second: #000066;
+    --light-hover: white;
+    --light-text: #151426;
+    --light-btn:#ff043a;
+    --blue: #000066;
+    --white: #fff;
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Bebas Neue', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    place-items: center;
+    font-family: var(--font-family);
+    background:#000066;
+    overflow: auto;
+    
+}
+
+.container {
+    width: max-content;
+    height: max-content;
+    position: relative;
+    display: flex;
+    padding: 2% 0px 0px 0px;
+    justify-content: center;
+    top: 10%;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+}
+.calendar {
+    height: auto;
+    width: max-content;
+    background-color: var(--light-main);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    padding: 10px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--light-btn);
+    color: white;
+    padding: 10px;
+    border-radius: 20px 20px 0 0;
+    font-family: var(--font-secondary);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.year-picker {
+    display: flex;
+    align-items: center;
+}
+
+.year-change {
+    cursor: pointer;
+    display: flex;
+    font-size: 45px;
+    color: #f59ec4;
+    margin: 0px 10px;
+    font-family: var(--font-secondary);
+    font-weight: bold;
+}
+
+.year-change:hover {
+    color: var(--light-text);
+}
+
+.calendar-body {
+    padding: 10px;
+    font-family: var(--font-primary);
+}
+
+.calendar-week-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--light-second);
+    color: var(--text-secondary);
+}
+
+.calendar-week-days div {
+    font-size: 1.2rem;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    color: var(--light-text);
+    text-align: center;
+}
+
+.calendar-days div {
+    margin: 5px;
+    padding: 5px 0px;
+    cursor: pointer;
+    background-color: var(--light-main);
+    border-radius: 10px;
+    transition: background-color 0.4s ease;
+}
+
+.calendar-days div:hover {
+    background-color: var(--light-hover);
+}
+
+.calendar-days .current-date {
+    background: var(--light-btn);
+    color: var(--white);
+}
+
+.date-time-formate {
+    margin-top: 10px; /* Aumentando a margem superior */
+    text-align: center;
+    font-family: var(--font-secondary);
+    font-size: 20px;
+    padding-bottom: 0px; /* Adicionando um espaçamento inferior */
+    font-weight: bold;
+}
+
+
+.date-time-value {
+    display: grid;
+}
+
+.month-list {
+    height: 100%;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    display: grid;
+    z-index: 1;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--light-main);
+    border-radius: 0 0 20px 20px;
+    box-shadow: var(--shadow);
+    padding: 10px;
+    display: none;
+}
+
+.month-list.show {
+    display: grid;
+}
+
+.month-list div {
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.month-list div:hover {
+    background-color: var(--light-hover);
+}
+
+.hideonce {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: grid;
+}
+
+.hidetime {
+    display: none;
+}
+
+.showtime {
+    display: grid;
+}
+
+.calendar-days .holiday-date {
+    color: green; /* Altere para a cor desejada */
+    font-weight: bold; /* Ou adicione outros estilos conforme necessário */
+    /* Adicione outros estilos conforme necessário */
+} 
+
+/* datas comemorativas */
+.special-dates {
+    margin-top: 10px;
+    padding: 2px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.special-date {
+    font-family: var(--font-primary);
+    font-size: 15px;
+    margin-bottom: 10px;
+    align-items: center;
+    text-align: center; /* Centraliza o texto */
+    font-weight: bold
+}
+.image-container {
+    text-align: center; /* Alinhar ao centro horizontalmente */
+    max-width: 200px; /* Largura máxima para o contêiner */
+    margin: 20px auto; /* Centralizar o contêiner na tela e adicionar espaço acima */
+    position: relative; /* Posição relativa para facilitar o posicionamento dos pseudo-elementos */
+}
+
+.image-container img {
+    max-width: 70%; /* Garantir que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Manter a proporção da imagem */
+}
+
+.animation-container {
+    text-align: center; /* Alinhar ao centro horizontalmente */
+    margin: 20px auto; /* Centralizar o contêiner na tela e adicionar espaço acima */
+    position: relative; /* Posição relativa para facilitar o posicionamento dos elementos internos */
+}
+.bounce {
+    width: 10px; /* Largura das bolinhas */
+    height: 10px; /* Altura das bolinhas */
+    background-color: white; /* Cor das bolinhas */
+    border-radius: 50%; /* Forma de círculo */
+    animation: bounce 1s infinite alternate; /* Animação de salto */
+    display: inline-block; /* Exibir como bloco */
+    margin: 0 5px; /* Espaçamento entre as bolinhas */
+}
+
+.bounce:nth-child(1) {
+    animation-delay: 0.2s; /* Atraso para a primeira bolinha */
+}
+
+.bounce:nth-child(2) {
+    animation-delay: 0.4s; /* Atraso para a segunda bolinha */
+}
+
+.bounce:nth-child(3) {
+    animation-delay: 0.6s; /* Atraso para a terceira bolinha */
+}
+
+
+/* Barra de Navegação */
+.navbar {
+    position: relative;
+    background: #ff043a;
+    color: white;
+    padding: 40px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-weight: bold;
+}
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .logo {
+    color: white;
+    text-decoration: none;
+    font-size: 32px;
+    position: relative;
+    display: inline-block; /* Necessário para que a animação não afete outros elementos */
+    transition: all 0.3s ease;
+    font-family: 'Poppins';
+    margin-left: 40px; /* Espaçamento de 20 pixels à esquerda */
+}
+
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(2px); }
+    60% { transform: translateX(-1px); }
+    80% { transform: translateX(1px); }
+    100% { transform: translateX(0); }
+}
+
+.navbar .logo:hover {
+    animation: vibrate 0.3s linear infinite;
+}
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin-right: 40px; 
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Poppins';
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 6px;
+    background-color: #000066;
+    transition: width 0.5s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+/* Rodapé */
+.footer {
+    background:  #ff043a;
+    color: white; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-icons a {
+    color: white; /* Cor dos ícones */
+    text-decoration: none; /* Remover sublinhado */
+    margin: 0 10px; /* Espaçamento entre os ícones */
+    font-size: 24px; /* Tamanho do ícone */
+    transition: color 0.3s ease; /* Transição suave da cor */
+}
+
+.contact-icons a:hover {
+    color: #000066; /* Mudar cor ao passar o mouse */
+}
+
+.contact-icons p {
+    margin-right: 10px; /* Espaçamento entre o texto e o logo */
+    font-family: 'Poppins';
+}
+
+.contact-icons img {
+    width: 120px; /* Tamanho do logo */
+    vertical-align: middle; /* Alinhamento vertical */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+.contact-icons img:hover {
+    transform: scale(1.1); /* Aumentar o tamanho ao passar o mouse */
+}
+/* Rodapé */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+@media screen and (max-width: 768px) {
+    .footer .contact-icons a {
+        font-size: 16px;
+    }
+
+    .footer .contact-icons p {
+        font-size: 10px;
+    }
+
+    .footer .contact-icons img {
+        max-width: 70px; /* Reduz ainda mais o tamanho da imagem */
+    }
+    header nav {
+        display: flex;
+        position: center;
+        white-space: nowrap;
+    }
+    header nav a {
+        margin-bottom: 10px; /* Adiciona espaçamento entre os itens da navegação */
+    }
+    .menu-icon,
+    .close-icon {
+        display: block;
+    }
+
+    .menu-icon {
+        margin-right: 20px;
+    }
+    body {
+        overflow: auto; /* Permitir rolagem na página */
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar {
+        margin-top: 40px;
+        width: 100%; /* Reduzir um pouco a largura para caber melhor em telas menores */
+        height: auto; /* Permitir que a altura seja ajustada automaticamente para acomodar o conteúdo */
+        padding: 10px;
+    }
+
+    .calendar-header {
+        font-size: 20px; /* Reduzir um pouco o tamanho da fonte do cabeçalho */
+    }
+
+    .calendar-week-days,
+    .calendar-days {
+        font-size: 10px;
+    }
+
+    .calendar-days div {
+        font-size: 0.8rem;
+        padding: 3px 0px;
+    }
+
+    .date-time-formate {
+        font-size: 16px; /* Reduzir um pouco o tamanho da fonte do formato de data/hora */
+    }
+
+    .month-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .special-dates {
+        padding: 1px;
+    }
+
+    .special-date {
+        font-size: 14px;
+    }
+    .image-container{
+       width: 100px;
+       height: 100px;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* Centraliza os itens horizontalmente */
+        align-items: center; /* Alinha os itens verticalmente */
+        padding: 10px 20px; /* Espaçamento interno */
+        color: white; /* Cor do texto */
+    }
+
+    .navbar .container {
+        max-width: 100%; /* Define a largura máxima do contêiner */
+        padding: 0 20px; /* Adiciona espaçamento interno ao contêiner */
+        box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
+    }
+    .navbar .logo{
+        font-size: 17px;
+        white-space: nowrap; /* Impede quebra de linha */
+        margin-left: -10px;
+    }
+
+    .navbar img {
+        width: 50px; /* Define a largura da imagem da logo */
+        margin-right: 2px;
+        margin-left: 30px;
+    }
+
+    .navbar .nav-links {
+        list-style: none; /* Remove os marcadores de lista */
+        margin: 0; /* Remove as margens */
+        padding: 0; /* Remove o preenchimento */
+        margin-left: 30px;
+    }
+
+    .navbar .nav-links a {
+        font-size: 13px; /* Define o tamanho da fonte dos links */
+        text-decoration: none; /* Remove a decoração de texto */
+        color: white; /* Cor dos links */
+    }
+    .navbar .nav-links a::after {
+        transition: width 0.3s ease-in-out;
+    }
+}

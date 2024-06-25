@@ -1,0 +1,482 @@
+/* Importação de Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/bebas-neue');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+/* Estilos Gerais */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    background-color: #eee;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+/* Barra de Carregamento */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ff043a;
+    z-index: 9999;
+    transition: width 2s ease-out; /* Ajuste o tempo de transição para 1 segundo */
+}
+
+/* Cabeçalho */
+header {
+    background-image: url('image/img1.jpg');
+    background-position: center;
+    background-size: cover; /* Faz a imagem ocupar toda a área do elemento */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    height: 100vh; /* Define a altura como 100% da altura da viewport */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 100%; /* Garante que a largura não ultrapasse a tela */
+    margin: 0;
+    padding: 0;
+}
+
+header nav {
+    position: absolute;
+    top: 0px;
+    left: 50%; /* Posiciona a partir do meio */
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    display: flex;
+    align-items: center;
+    padding: 0; /* Remove o padding para evitar espaçamento extra */
+    padding: 18px 20px; /* Ajuste o padding conforme necessário para aumentar o tamanho do fundo */
+}
+
+header nav a {
+    letter-spacing: 1.8px;
+    font-family: Poppins;
+    margin-top: 5px;
+    font-weight: bold;
+    color: white;
+    margin-right: 20px; /* Diminuído o espaço entre os links */
+    font-size: 16px; /* Diminuído o tamanho da fonte */
+    position: relative;
+    transition: font-size 0.8s ease;
+    font-family: 'Poppins';
+}
+
+/* Estilo dos Links de Navegação */
+header nav a {
+    position: relative; /* Certifique-se de que os links têm position: relative */
+}
+
+header nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 5px;
+    background-color: #ff043a;
+    transition: width 0.8s ease; /* Tempo de transição ajustado */
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header nav a:hover::after {
+    width: 100%; /* Preenche completamente ao passar o mouse */
+}
+
+header nav a:last-child {
+    margin-right: 0; /* Remove a margem direita para o último botão */
+}
+/*texto contato*/
+.banner {
+    text-align: center; /* Centraliza o conteúdo do banner */
+    padding: 50px 0; /* Adiciona um espaçamento interno de 50px no topo e na parte inferior */
+    color: #eee; /* Define a cor do texto como branco */
+    position: absolute; /* Permite o alinhamento central */
+    top: 50%; /* Define a distância do topo */
+    left: 50%; /* Define a distância da esquerda */
+    transform: translate(-50%, -50%); /* Move o banner para o centro */
+    width: 100%; /* Define a largura do banner */
+}
+
+.banner h1 {
+    font-family: 'Bebas Neue', sans-serif; /* Adiciona a fonte 'Bebas Neue' */
+    font-size: 100px; /* Tamanho da fonte */
+    color: white; /* Cor do texto (branco) */
+    text-transform: uppercase; /* Transforma o texto em maiúsculo */
+    letter-spacing: 3px; /* Espaçamento entre as letras */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao texto */
+    font-style: italic;
+    line-height: 90%; /* Ajusta o espaçamento entre as linhas */
+}
+
+.banner p {
+    font-family: 'Poppins', sans-serif; /* Adiciona a fonte 'Poppins' */
+    font-size: 15px; /* Tamanho da fonte */
+    font-weight: 700; /* Coloca o texto em negrito */
+    color: white; /* Cor do texto (branco) */
+    letter-spacing: 2px; /* Espaçamento entre as letras */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao texto */
+    padding: 10px 20px; /* Adiciona um espaçamento interno */
+    margin-top: -20px;
+}
+.banner .highlight {
+    color: #ff043a; /* Cor azul */
+    align-items: center;
+    margin-right: 35px;
+    font-size: 100px; /* Tamanho da fonte maior para destaque */
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7); /* Sombra mais forte para destaque */
+    font-style: italic;
+}
+/* Para deixar o texto do botão em itálico */
+.banner .btn span {
+    font-style: italic;
+}
+/*botão*/
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cta {
+      display: flex;
+      padding: 10px 40px;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 35px;
+      font-style: italic;
+      color: white;
+      background: #ff043a;
+      transition: 1s;
+      box-shadow: 6px 6px 0 black;
+      transform: skewX(-15deg);
+  }
+  
+  .cta:focus {
+     outline: none; 
+  }
+  
+  .cta:hover {
+      transition: 0.5s;
+      box-shadow: 10px 10px 0 #000066;
+  }
+  
+  .cta span:nth-child(2) {
+      transition: 0.5s;
+      margin-right: 0px;
+  }
+  
+  .cta:hover  span:nth-child(2) {
+      transition: 0.5s;
+      margin-right: 45px;
+  }
+  
+    span {
+      transform: skewX(15deg) 
+    }
+  
+    span:nth-child(2) {
+      width: 20px;
+      margin-left: 30px;
+      position: relative;
+      top: 12%;
+    }
+    
+  /**************SVG****************/
+  
+  path.one {
+      transition: 0.4s;
+      transform: translateX(-60%);
+  }
+  
+  path.two {
+      transition: 0.5s;
+      transform: translateX(-30%);
+  }
+  
+  .cta:hover path.three {
+      animation: color_anim 1s infinite 0.2s;
+  }
+  
+  .cta:hover path.one {
+      transform: translateX(0%);
+      animation: color_anim 1s infinite 0.6s;
+  }
+  
+  .cta:hover path.two {
+      transform: translateX(0%);
+      animation: color_anim 1s infinite 0.4s;
+  }
+  
+  /* SVG animations */
+  
+  @keyframes color_anim {
+      0% {
+          fill: white;
+      }
+      50% {
+          fill: #000066;
+      }
+      100% {
+          fill: white;
+      }
+  }
+  
+/*botão-final*/
+/*>>>>>>>>>>>>>>>-<<<<<<<<<<<<<<<<*/
+/* Seção Sobre */
+.sobre {
+    padding: 50px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.sobre-text, .sobre-img {
+    flex: 1;
+    min-width: 300px;
+}
+
+.sobre-text h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    color: #ff043a;
+    margin-bottom: 20px;
+}
+
+.sobre-text form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sobre-text form label {
+    font-weight: bold;
+}
+
+.sobre-text form input, 
+.sobre-text form button {
+    padding: 12px 24px; /* Ajusta o preenchimento do botão */
+    border: 2.5px 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao texto */
+    background-color: white; /* Define o fundo como transparente */
+    color: black; /* Define a cor do texto */
+    font-size: 1em;
+    border-radius: 15px; /* Deixa o botão mais arredondado */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+}
+
+.sobre-text form input:focus, 
+.sobre-text form button:focus {
+    outline: none;
+}
+.sobre-text form button {
+    background-color: #ff043a;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px; /* Reduzindo o tamanho da fonte */
+    font-weight: bold;
+    color: white;
+    border: none;
+    padding: 8px 8px; /* Reduzindo o preenchimento */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    width: 300px; /* Defina a largura desejada aqui */
+}
+
+.sobre-text form button:hover {
+    background-color: #000066; /* Mudando a cor de fundo no hover */
+    transform: scale(1.1); /* Aplicando uma escala de 110% no hover */
+}
+
+
+/*mapa*/
+.mapBox {
+    width: 100%;
+    height: 300px;
+    border-radius: 20px; /* Deixa o mapa mais redondo */
+    overflow: hidden; /* Oculta partes do mapa que ultrapassam os limites do contêiner */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao mapa */
+    margin-top: 115px; /* Adiciona um espaço superior ao mapa */
+}
+
+
+.mapBox iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Rodapé */
+.footer {
+    background: linear-gradient(to right, #ff043a, #000066, #ff043a);
+    color: white; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-icons a {
+    color: white; /* Cor dos ícones */
+    text-decoration: none; /* Remover sublinhado */
+    margin: 0 10px; /* Espaçamento entre os ícones */
+    font-size: 24px; /* Tamanho do ícone */
+    transition: color 0.3s ease; /* Transição suave da cor */
+}
+
+.contact-icons a:hover {
+    color: #ff043a; /* Mudar cor ao passar o mouse */
+}
+
+.contact-icons p {
+    margin-right: 10px; /* Espaçamento entre o texto e o logo */
+    font-family: 'Poppins';
+}
+
+.contact-icons img {
+    width: 120px; /* Tamanho do logo */
+    vertical-align: middle; /* Alinhamento vertical */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+.contact-icons img:hover {
+    transform: scale(1.1); /* Aumentar o tamanho ao passar o mouse */
+}
+/* Rodapé */
+/* Estilo dos Links de Navegação */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a { 
+    color: white;
+    font-size: 15px;
+    position: relative;
+    transition: font-size 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #ff043a;
+    transition: width 0.5s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: calc(100% - 40px);
+}
+
+.nav-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header nav {
+        margin-top: 5px;
+        margin-left: auto; /* Define margem automática à esquerda */
+        margin-right: auto; /* Define margem automática à direita */
+        max-width: 100%; /* Define uma largura máxima para a barra de navegação */
+        padding: 15px 20px; /* Adiciona preenchimento apenas nos lados esquerdo e direito */
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
+    header nav a {
+        margin: 0 10px;
+        font-size: 9px;
+        white-space: nowrap; /* Impede a quebra de linha */
+        text-align: center;
+    }
+    /* Adiciona a animação de mudança de cor ao clicar */
+    header nav.mobile a:active {
+        color: #e70303; /* Cor alterada ao clicar */
+    }
+    
+}
+@media screen and (max-width: 768px) {
+    .footer .contact-icons a {
+        font-size: 16px;
+    }
+
+    .footer .contact-icons p {
+        font-size: 10px;
+    }
+
+    .footer .contact-icons img {
+        max-width: 60px; /* Reduz ainda mais o tamanho da imagem */
+    }
+    .banner h1 {
+        font-size: 60px; /* Tamanho da fonte inicial */
+        align-items: center;
+    }
+    
+    .banner h1 .highlight {
+        font-size: 60px; /* Tamanho da fonte para o destaque */
+        text-align: center;
+        font-weight: bold;
+    }
+    .banner p {
+        font-size: 12px; /* Reduzir o tamanho da fonte */
+    }
+}
+@media (max-width: 768px) {
+    .cta {
+        padding: 5px 10px; /* Reduzindo ainda mais o padding para dispositivos móveis */
+        font-size: 20px; /* Reduzindo ainda mais o tamanho da fonte para dispositivos móveis */
+        text-align: center;
+        line-height: 60px;
+        padding-left: 30px;
+        font-weight: bold;
+        margin-bottom: 30px; /* Adicionando espaço abaixo do botão */
+    }
+
+    .cta span:nth-child(2) {
+        margin-right: 15px; /* Ajustando o espaçamento para dispositivos móveis */
+    }
+    .cta svg {
+        width: 40px; /* Definindo a largura da flecha */
+        height: 30px; /* Definindo a altura da flecha */
+    }
+}

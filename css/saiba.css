@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/bebas-neue');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+/* Estilos Globais */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* Barra de Carregamento */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Largura inicial para cobrir a tela */
+    height: 2px;
+    background-color: #ff043a;
+    z-index: 9999;
+    transition: width 6s ease; /* Tempo de transição ajustado para 2 segundos */
+}
+.loader.loaded {
+    width: 0;
+}
+/* Barra de Navegação */
+.navbar {
+    position: relative;
+    background: linear-gradient(to right, #000066, #ff043a, #000066); /* Gradiente de cores */
+    color: white;
+    padding: 40px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-weight: bold;
+}
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    position: relative;
+    display: inline-block; /* Necessário para que a animação não afete outros elementos */
+    transition: all 0.3s ease;
+}
+
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(2px); }
+    60% { transform: translateX(-1px); }
+    80% { transform: translateX(1px); }
+    100% { transform: translateX(0); }
+}
+
+.navbar .logo:hover {
+    animation: vibrate 0.3s linear infinite;
+}
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 6px;
+    background-color: #ff043a;
+    transition: width 0.5s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Conteúdo da Página */
+
+/* Seção Nossa hist´roia*/
+.historia-section {
+    width: 80%;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.historia-section:hover {
+    transform: scale(1.01); /* Aumenta o tamanho do container ao passar o mouse */
+}
+.historia-section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #ea4529;
+    text-align: center;
+}
+.historia-section img{
+    width: 1150px;
+    display: block;
+    margin: 0 auto 20px auto; /* Centraliza a imagem e adiciona margem inferior */
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+.historia-section img:hover {
+    transform: scale(1.01); /* Aumenta o tamanho da imagem ao passar o mouse */
+}
+.historia-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.historia-content p {
+    font-size: 16px;
+    color: #000;
+    text-align: center;
+}
+/* Rodapé */
+.footer {
+    background: linear-gradient(to right, #000066, #ff043a, #000066); /* Gradiente de cores */
+    color: white; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-icons a {
+    color: white; /* Cor dos ícones */
+    text-decoration: none; /* Remover sublinhado */
+    margin: 0 10px; /* Espaçamento entre os ícones */
+    font-size: 24px; /* Tamanho do ícone */
+    transition: color 0.3s ease; /* Transição suave da cor */
+}
+
+.contact-icons a:hover {
+    color: #000066; /* Mudar cor ao passar o mouse */
+}
+
+.contact-icons p {
+    margin-right: 10px; /* Espaçamento entre o texto e o logo */
+    font-family: 'Poppins';
+}
+
+.contact-icons img {
+    width: 120px; /* Tamanho do logo */
+    vertical-align: middle; /* Alinhamento vertical */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+.contact-icons img:hover {
+    transform: scale(1.1); /* Aumentar o tamanho ao passar o mouse */
+}
+/* Rodapé */
+/* Pesquisa */
+.sectionSearch {
+    font-family: 'Poppins', sans-serif; /* Aplica a fonte Poppins */
+    color: black; /* Define a cor do texto como branca */
+    text-align: center; /* Centralizar o conteúdo */
+}
+
+.sectionSearch h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sectionSearch p {
+    font-size: 10px;
+}
+.extra-section .sectionSobre .faca-mais-text p {
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 100px; /* Adiciona espaço vazio à esquerda */
+    padding-right: 100px; /* Adiciona espaço vazio à direita */
+    color: white;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    display: inline-block; /* Tornar o container da pesquisa um bloco em linha */
+}
+
+.search-container input[type="text"] {
+    padding: 15px;
+    width: 600px;
+    font-size: 16px;
+    margin-right: 10px; /* Adicione uma margem direita para criar espaço entre o input e o botão */
+    font-family: 'Poppins', sans-serif; /* Adicionar a fonte Poppins */
+    border: 3px solid #000066; /* Aumentar a largura da borda */
+    border-radius: 40px; /* Tornar as bordas mais arredondadas */
+    outline: none;
+}
+
+.search-container input[type="text"].focused::selection {
+    background: #000066;
+    color: black;
+}
+
+.search-container button {
+    padding: 18px;
+    background-color: #000066;
+    color: white;
+    border: 2px solid white; /* Aumentar a largura da borda */
+    border-radius: 40px; /* Tornar as bordas mais arredondadas */
+    cursor: pointer;
+}
+
+
+.search-container button:hover {
+    background-color: #ff043a;
+}
+
+.foundSearchStart {
+    background-color: #000066;
+    border-radius: 100px;
+}
+
+.foundSearchEnd {
+    background-color:linear-gradient(to right, #d84949d8, #e70303, #e48282);
+    border-radius: 100px;
+    transition: background-color 0.5s ease;
+}
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+/* Estilos para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .search-container {
+        display: flex; /* Assegura que os elementos fiquem lado a lado */
+        align-items: center;
+        width: 50%;
+        margin-bottom: 15px;
+        margin: center;
+        margin-left: 45px;
+        margin-right: 45px;
+    }
+
+    .search-container input[type="text"] {
+        flex: 1; /* Permite que o input ocupe o máximo de espaço disponível */
+        font-size: 18px;
+        padding: 10px; /* Ajusta o padding para dispositivos móveis */
+    }
+
+    .search-container button {
+        flex: 0 0 45px; /* Define a largura fixa do botão */
+        font-size: 14px;
+        padding: 10px; /* Ajusta o padding para dispositivos móveis */
+    }
+}
+/* Pesquisa-final */
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 15px; /* Reduz o espaçamento interno no rodapé */
+    }
+    .footer .contact-icons a {
+        font-size: 16px;
+    }
+
+    .footer .contact-icons p {
+        font-size: 10px;
+    }
+
+    .footer .contact-icons img {
+        max-width: 70px; /* Reduz ainda mais o tamanho da imagem */
+    }
+}
+/*barra navegação*/
+/* Seção para links do APP */
+/* Seção para links do APP */
+.app-section {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+    background-color: #ff043a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.app-section:hover {
+    transform: scale(1.01); /* Aumenta o tamanho do container ao passar o mouse */
+}
+.app-section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+.app-section .app-logo {
+    width: 100px; /* Ajuste o tamanho da logo do APP */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+.app-section .app-logo:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do container ao passar o mouse */
+}
+.app-section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: white;
+}
+.app-section h6 {
+    font-size: 10px;
+    color: white;
+}
+.app-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.app-link img {
+    width: 140px; /* Ajuste o tamanho das imagens de links */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.app-link img:hover {
+    transform: scale(1.1);
+}
+
+/* Seção Modelo de Ensino Mackenzie */
+.mackenzie-section {
+    width: 80%;
+    margin: 40px auto;
+    background-color: #cc081b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.mackenzie-section:hover {
+    transform: scale(1.01); /* Aumenta o tamanho do container ao passar o mouse */
+}
+.mackenzie-section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+.mackenzie-section img{
+    width: 150px;
+    display: block;
+    margin: 0 auto 20px auto; /* Centraliza a imagem e adiciona margem inferior */
+    transition: transform 0.3s ease;
+}
+.mackenzie-section img:hover {
+    transform: scale(1.1); /* Aumenta o tamanho da imagem ao passar o mouse */
+}
+.mackenzie-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mackenzie-content p {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+
+/* Seção Aprovados no Enem - Fique ligado */
+.enem-section, .fique-ligado-section {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.enem-section h2, .fique-ligado-section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #ff043a;
+}
+
+.enem-carousel-container, .fique-ligado-carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.enem-carousel, .fique-ligado-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.enem-carousel img, .fique-ligado-carousel img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 40px; /* Aumente o tamanho da fonte para aumentar as setas */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: transparent;
+}
+
+.carousel-indicators, .fique-ligado-carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.indicator {
+    width: 30px; /* Largura do retângulo */
+    height: 10px; /* Altura do retângulo */
+    background-color: #ddd;
+    border-radius: 5px; /* Bordas arredondadas */
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: #ff043a;
+}
+
+/* Estilos para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* Centraliza os itens horizontalmente */
+        align-items: center; /* Alinha os itens verticalmente */
+        padding: 10px 20px; /* Espaçamento interno */
+        background-color: #6625c1; /* Cor de fundo da barra de navegação */
+        color: white; /* Cor do texto */
+    }
+
+    .navbar .container {
+        max-width: 100%; /* Define a largura máxima do contêiner */
+        padding: 0 20px; /* Adiciona espaçamento interno ao contêiner */
+        box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
+    }
+    .navbar .logo{
+        font-size: 17px;
+        white-space: nowrap; /* Impede quebra de linha */
+    }
+
+    .navbar img {
+        width: 50px; /* Define a largura da imagem da logo */
+        margin-right: 25px;
+        margin-left: 40px;
+    }
+
+    .navbar .nav-links {
+        list-style: none; /* Remove os marcadores de lista */
+        margin: 0; /* Remove as margens */
+        padding: 0; /* Remove o preenchimento */
+    }
+
+    .navbar .nav-links li {
+        margin: 0 10px; /* Adiciona espaçamento horizontal entre os itens */
+    }
+
+    .navbar .nav-links a {
+        font-size: 13px; /* Define o tamanho da fonte dos links */
+        text-decoration: none; /* Remove a decoração de texto */
+        color: white; /* Cor dos links */
+    }
+    .navbar .nav-links a::after {
+        transition: width 0.3s ease-in-out;
+    }
+    .carousel-button {
+        display: none; /* Esconde os botões no mobile */
+    }
+    .historia-section img{
+        width: 300px;
+        display: block;
+        margin: 0 auto 20px auto; /* Centraliza a imagem e adiciona margem inferior */
+        transition: transform 0.3s ease;
+    }
+    .historia-content p{
+        text-align: justify;
+    }
+}
