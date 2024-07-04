@@ -1,7 +1,5 @@
 # Colégio Aliança - Website
 
-![Logo](image/LOGO_ALIANCA.png)
-
 ## Sobre o Projeto
 
 O site do Colégio Aliança foi desenvolvido com o objetivo de criar uma experiência moderna e inovadora, totalmente diferente dos tradicionais sites institucionais. O design foi cuidadosamente elaborado para ser visualmente atraente e funcional, proporcionando uma navegação intuitiva e envolvente para os usuários.
